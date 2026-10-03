@@ -1,0 +1,10 @@
+{
+  "Voting.sol": {
+    "__sources__": {
+      "Voting.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\ncontract Voting {\r\n    uint public yesVotes;\r\n    uint public noVotes;\r\n\r\n    mapping(address => bool) public hasVoted;\r\n\r\n    function voteYes() public {\r\n        require(!hasVoted[msg.sender], \"Already voted\");\r\n        hasVoted[msg.sender] = true;\r\n        yesVotes++;\r\n    }\r\n\r\n    function voteNo() public {\r\n        require(!hasVoted[msg.sender], \"Already voted\");\r\n        hasVoted[msg.sender] = true;\r\n        noVotes++;\r\n    }\r\n}",
+        "file": "Voting.sol"
+      }
+    }
+  }
+}
